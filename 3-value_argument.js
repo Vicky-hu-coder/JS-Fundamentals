@@ -1,7 +1,7 @@
-// Prints "My number: <value>" if the argument is a number
-const num = parseInt(process.argv[2]);
-if (!isNaN(num)) {
-  console.log(`My number: ${num}`);
+const args = process.argv.slice(2);
+
+if (args[0] === undefined) {
+    console.log("No argument");
 } else {
-  console.log("Not a number");
+    console.log(args[0]);
 }
