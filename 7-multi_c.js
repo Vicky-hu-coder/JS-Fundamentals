@@ -1,11 +1,15 @@
-const args = process.argv.slice(2);
-const count = parseInt(args[0]);
+const x = parseInt(process.argv[2], 10);
 
-if (!count || count <= 0) {
+if (!process.argv[2]) {
     console.log("Missing number of occurrences");
-} else {
-    for (let i = 0; i < count; i++) {
-        console.log("C is fun");
+} else if (x > 0) {
+    let output = "";
+    for (let i = 0; i < x; i++) {
+        output += "C is fun\n";
     }
+    console.log(output.slice(0, -1)); // removes last extra newline
+} else {
+    // Do nothing for zero or negative numbers
 }
+
 
